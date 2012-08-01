@@ -13,7 +13,8 @@ Conky-interactive - tai vienas mano skriptų rinkinių. Šis įgalina naudoti co
 	cclicky.sh
 		šis procesas turi būti paleistas ir veikti fone, kartu su conky langu. Jis stebi pelės paspaudimus ir laukia, kol bus paspausta ant nurodyto lango. Taip įvykus paleidžiamas skriptas
 	ccaction.sh
-		, kuris toliau analizuoja kursoriaus koordinates, lygina jas su mygtukų koordinatėmis, nurodytomis konfigūracijos bylose.
+		, kuris toliau analizuoja kursoriaus koordinates, lygina jas su mygtukų koordinatėmis, nurodytomis konfigūracijos bylose. 
+		NB! reikia pakeisti viduje esantį kintamąjį CONFIG_DIR taip, kad būtų nurodytas visas kelias iki "confs/" katalogo.
 	confs/
 		kataloge laikomos mygtukų konfigūracijos bylos. Kiekvienam langui kuriama byla, kurios pavadinimas atitinka lango pavadinimą. Pvz.: jei norime spausti ant aktyvios srities, esančios lange, kurio pavadinimas „Conky-stats“, kataloge 'confs/' kuriame bylą pavadinimu Conky-stats. Joje įrašomos konfigūracijos kiekvienam „mygtukui“. Konfigūracijos atrodo taip:
 		BUTTON_1      terminal     8  38 132 162 "gnome-terminal"
