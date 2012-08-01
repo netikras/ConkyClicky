@@ -6,7 +6,7 @@ if [ `whoami` = root ]; then
 fi
 
 
-sudo apt-get install xdotool #xwininfo
+#sudo apt-get install xdotool #xwininfo #prie priklausomybių parašyk jog reikia to paketo, ta komanda vistiek veikia tik ant ubuntu.
 
 cd ../
 cp -arf ConkyClicky/. ~/.ConkyClicky
@@ -14,4 +14,4 @@ cp -arf ConkyClicky/. ~/.ConkyClicky
 USERNAME=`whoami`
 sed -i "s/my_username/${USERNAME}/g" ~/.ConkyClicky/cclicky.sh
 
-echo DONE.
+echo ATLIKTA.

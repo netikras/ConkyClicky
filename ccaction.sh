@@ -33,19 +33,19 @@ echo
 ##################################################################
 ############# Buttons ############################################
 cd $CONFIG_DIR
-# Paimami ir suskaičiuojami visi mygtukai su jų duomenimis iš konfig'o, kurio pavadinimas atitinka paspausto lango pavadinimą
+# Paimami ir suskaičiuojami visi mygtukai su jų duomenimis iš konfigūracijos failo, kurio pavadinimas atitinka paspausto lango pavadinimą
 count=`grep ^BUTTON_ $windowname | wc -l`
-# kiekvieno mygtuko parametrai išrūšiuojami, priskiriami kintamiesiems ir sulyginami su kursoriaus koord.:
+# kiekvieno mygtuko parametrai išrūšiuojami, priskiriami kintamiesiems ir sulyginami su žymeklio koord.:
 while [ $count -gt 0 ]; do
 	array=$(cat $windowname|grep BUTTON_$count)
 
 	IFS="\"" # atskirsime paleistiną komandą nuo mygtuko parametrų
 	cnt=0 # pagr. skaitliukas
 	for var in $array; do # tikrinami mygtuko parametrai ir leistina komanda:
-		if [ $cnt == 1 ]; then # paima antrąjį mygtuko configūrac. elementą (leistiną komandą)
+		if [ $cnt == 1 ]; then # paima antrąjį mygtuko konfigūrac. elementą (leistiną komandą)
 			komanda=$var
 			echo komanda yra: $komanda; echo
-			if [ "$XX" -ge "$button_xL" -a "$XX" -le "$button_xR" -a "$YY" -ge "$button_yT" -a "$YY" -le "$button_yB" ] ; then # sulygina mygtuko ir kursoriaus koord. Jei atitinka, paleidžia komandą
+			if [ "$XX" -ge "$button_xL" -a "$XX" -le "$button_xR" -a "$YY" -ge "$button_yT" -a "$YY" -le "$button_yB" ] ; then # sulygina mygtuko ir žymeklio koord. Jei atitinka, paleidžia komandą
 				echo vykdoma komanda
 				eval "$komanda"
 			fi

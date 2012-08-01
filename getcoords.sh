@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Šiuo skriptu gausite reikiamas kursoriaus koordinates.
+# Šis scenarijus padės gauti reikiamas žymeklio koordinates.
 # Patogu ieškant tikslių mygtuko koordinačių konkrečiame lange (šiuo atveju - "Conky-*")
 # Naudojimas:
 #	sudo chmod +x getcoords.sh
-#		nuveskite pelės kursorių į norimą vietą ir įvykdykite komandą:
+#		nuveskite pelės žymeklį į norimą vietą ir įvykdykite komandą:
 #	./getcoords.sh
 
 read X Y screen windowID <<< `xdotool getmouselocation 2>/dev/null|sed 's/x:\(.*\) y:\(.*\) screen:\(.*\) window:\(.*\)/\1 \2 \3 \4/'`
@@ -37,5 +37,5 @@ užkomentuota
 XX=$((X - x))
 YY=$((Y - y))
 
-echo Kursoriaus koordinatės lange \"$windowname\" \(x,y\): \($XX,$YY\)
+echo Žymeklio koordinatės lange \"$windowname\" \(x,y\): \($XX,$YY\)
 echo
