@@ -1,0 +1,35 @@
+
+Program:	ConkyClicky
+Version:	1.0
+Author:		netikras <dariuxas@gmail.com>
+Date:		2012.08.01
+Location:	Lithuania
+OS:		ubuntu 12.04
+
+
+Conky-interactive - tai vienas mano skriptų rinkinių. Šis įgalina naudoti conky langus ne tik statiškai, bet ir interaktyviai: galima sukurti aktyvias conky sritis (mygtukus), kurias pamygus pele bus įvykdoma viena ar kita komanda. Paketas susideda iš keleto dalių:
+	getcoords.sh
+		šis skriptas parodo kursoriaus koordinates lango ir ekrano atžvilgiais, parodo lango, ant kurio užvestas kursorius, pavadinimą. Įrankis patogus, norint pasirašyti ConkyClicky konfigūracijas.
+	cclicky.sh
+		šis procesas turi būti paleistas ir veikti fone, kartu su conky langu. Jis stebi pelės paspaudimus ir laukia, kol bus paspausta ant nurodyto lango. Taip įvykus paleidžiamas skriptas
+	ccaction.sh
+		, kuris toliau analizuoja kursoriaus koordinates, lygina jas su mygtukų koordinatėmis, nurodytomis konfigūracijos bylose.
+	confs/
+		kataloge laikomos mygtukų konfigūracijos bylos. Kiekvienam langui kuriama byla, kurios pavadinimas atitinka lango pavadinimą. Pvz.: jei norime spausti ant aktyvios srities, esančios lange, kurio pavadinimas „Conky-stats“, kataloge 'confs/' kuriame bylą pavadinimu Conky-stats. Joje įrašomos konfigūracijos kiekvienam „mygtukui“. Konfigūracijos atrodo taip:
+		BUTTON_1      terminal     8  38 132 162 "gnome-terminal"
+
+		BUTTON_1 - mygtuko numeris
+		terminal - mygtuko pavadinimas (kad patiems būtų lengviau atskirti)
+		8 - kairioji X koordinatė
+		38 - dešinioji X koordinatė
+		132 - viršutinė Y ordinatė
+		162 - apatinė Y ordinatė
+			!!! koordinates galite gauti pasinaudoję ./getcoords.sh skriptu. Programa naudoja mygtuko koordinates LANGO atžvilgiu (o ne ekrano).
+		"gnome-terminal" - komanda, kuri bus paleista, kai pelytė pamygs ant aktyvios srities.
+
+Konfigūracijas BŪTINA rašyti tokiu pat eiliškumu. Vienam langui (vienam konfig. failui) galima nustatyti neribotą skaičių mygtukų - reikia tiesiog juos aprašyti naujose eilutėse.
+
+NB!
+Conky programos naudojamuose konfigūracijos failuose reikia įterpti eilutę:
+	own_window_title Conky-stats
+Vietoj 'stats' galima įrašyti ir kokį kitą pavadinimą. Geriau nepalikti tarpų. Programa atpažįsta conky langus iš „Conky-“ dalies. Likusi dalis - konfigūracijos failų įvairovei.
