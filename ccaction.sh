@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-CONFIG_DIR=confs
+CONFIG_DIR=~/.ConkyClicky/confs
 
 
 # Get mouse location and set its coordinates to variables X and Y
