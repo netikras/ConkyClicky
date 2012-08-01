@@ -1,0 +1,9 @@
+
+# you can use "bash getcoords.sh" to get coordinates of a cursor. Use „in the window“ coordinates!
+
+WINDOW_NAME=Conky-stats
+
+###
+button-number button-name xL  xR  yT  yB command
+BUTTON_1      edit_ToDo  173 195 379 389 "leafpad ~/skriptai/conky/mano/stats/darbai"
+BUTTON_2      terminal     8  38 132 162 "gnome-terminal"
