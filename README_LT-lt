@@ -34,3 +34,6 @@ NB!
 Conky programos naudojamuose konfigūracijos failuose reikia įterpti eilutę:
 	own_window_title Conky-stats
 Vietoj 'stats' galima įrašyti ir kokį kitą pavadinimą. Geriau nepalikti tarpų. Programa atpažįsta conky langus iš „Conky-“ dalies. Likusi dalis - konfigūracijos failų įvairovei.
+
+	install.sh
+		nukopijuoja visą katalogą į ~/.ConkyClicky ir pakeičia reikiamus kintamuosius. Jei norite pakeisti ConkyClicky buvimo vietą, turėsite pakeisti atitinkamai ir cclicky.sh ir ccaction.sh skriptuose esančius kintamuosius (PATH_TO_SCRIPT ir CONFIG_DIR) taip, kad adresai atitiktų.
