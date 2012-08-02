@@ -1,0 +1,58 @@
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+own_window_type normal
+own_window_title Conky-stats
+own_window_transparent yes
+own_window_hints undecorated,below,skip_taskbar,skip_pager
+#own_window_argb_visual no
+#own_window_argb_value 0
+override_utf8_locale yes
+
+# Use double buffering (reduces flicker, may not work for everyone) 
+double_buffer yes
+
+# fiddle with window 
+use_spacer right
+use_xft yes
+
+# Update interval in seconds
+update_interval 300.0
+
+# Minimum size of text area
+#minimum_size 250 5
+
+# Draw shades?
+draw_shades no
+
+# Text stuff
+draw_outline yes # amplifies text if yes
+draw_borders no
+xftfont Arial:size=10
+uppercase no # set to yes if you want all text to be in uppercase
+
+# Stippled borders?
+stippled_borders 3
+
+# border width
+border_width 10
+
+# Default colors and also border colors, grey90 == #ee7443
+default_color grey90
+
+#own_window_colour brown
+#own_window_transparent yes
+text_buffer_size 2500
+
+# Text alignment, other possible values are commented
+#alignment top_left
+#alignment top_left 
+alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+gap_x 5  
+gap_y 0
+# stuff after 'TEXT' will be formatted on screen 
+TEXT
+${font :size=11}${color orange}Delfi.lt: $color${color gray}Elektronika.lt: Kauno diena: $color${color orange}${hr 2}$color${font}
+${execpi 600 /home/gymka/Dev/ConkyClicky/rss.sh 1} 

@@ -1,4 +1,6 @@
 # you can use "bash getcoords.sh" to get coordinates of a cursor. Use „in the window“ coordinates!
 WINDOW_NAME=Conky-stats
-BUTTON_1      edit_ToDo  0 100 0 100 "gedit a"
+BUTTON_1      delfi  0 62 0 31 "/home/gymka/Dev/ConkyClicky/keist_srauta.sh 1"
+BUTTON_2      elektronika  65 171 0 31 "/home/gymka/Dev/ConkyClicky/keist_srauta.sh 2"
+BUTTON_3      diena  175 277 0 31 "/home/gymka/Dev/ConkyClicky/keist_srauta.sh 3"
 

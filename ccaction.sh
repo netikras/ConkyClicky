@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-CONFIG_DIR=/home/gymka/.ConkyClicky/confs
+CONFIG_DIR=/home/gymka/Dev/ConkyClicky/confs
 
 windowname=Conky-stats
 # Get mouse location and set its coordinates to variables X and Y
