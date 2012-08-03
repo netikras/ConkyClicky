@@ -16,7 +16,7 @@ case $1 in
 	cat $kelias/~rss-elektronika.txt|awk ' !x[$0]++'|tail -24|tac>$kelias/rss-elektronika.txt 
 	cp $kelias/rss-elektronika.txt $kelias/~rss-elektronika.txt
 	cat $kelias/rss-elektronika.txt|tac
-	rm $kelias/rss2.txt $kelias/~rss-elektronika.txt $kelias/~rss-elektronika-old.txt
+	rm $kelias/rss2.txt $kelias/~rss-elektronika-old.txt
 ;;
 	3)
 	#kauno diena
@@ -28,5 +28,5 @@ case $1 in
 	cat $kelias/~rss-diena.txt|awk ' !x[$0]++'|tail -24>$kelias/rss-diena.txt 
 	cp $kelias/rss-diena.txt $kelias/~rss-diena.txt
 	cat $kelias/rss-diena.txt
-	rm $kelias/rss3.txt $kelias/~rss-diena.txt $kelias/~rss-diena-old.txt
+	rm $kelias/rss3.txt $kelias/~rss-diena-old.txt
 esac

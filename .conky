@@ -54,5 +54,5 @@ gap_x 5
 gap_y 0
 # stuff after 'TEXT' will be formatted on screen 
 TEXT
-${font :size=11}${color orange}Delfi.lt: $color${color gray}Elektronika.lt: Kauno diena: $color${color orange}${hr 2}$color${font}
-${execpi 600 /home/gymka/Dev/Conky-rss/rss.sh 1} 
+${font :size=11}${color gray}Delfi.lt: Elektronika.lt: $color${color orange}Kauno diena: ${hr 2}$color${font}
+${execpi 600 /home/gymka/Dev/Conky-rss/rss.sh 3} 
