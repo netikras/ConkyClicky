@@ -4,13 +4,8 @@ case $1 in
 	1) 
 	#delfi
 	wget -q -O $kelias/rss1.txt 'http://www.delfi.lt/rss/feeds/daily.xml' 
-	cp $kelias/~rss-delfi.txt $kelias/~rss-delfi-old.txt	
-	grep title $kelias/rss1.txt | sed -n 's/.*<title>\(.*\)<\/title>.*/\1/p'|sed 1,2d|sed -n '1,24p'>$kelias/~rss-delfi.txt
-	cat $kelias/~rss-delfi-old.txt>>$kelias/~rss-delfi.txt
-	cat $kelias/~rss-delfi.txt|awk ' !x[$0]++'|tail -24|tac>$kelias/rss-delfi.txt #išmetam besidubliuojančias, paliekam tik pirmas 24. 
-	cp $kelias/rss-delfi.txt $kelias/~rss-delfi.txt
-	cat $kelias/rss-delfi.txt|tac
-	rm $kelias/rss1.txt $kelias/~rss-delfi.txt $kelias/~rss-delfi-old.txt
+	grep title $kelias/rss1.txt | sed -n 's/.*<title>\(.*\)<\/title>.*/\1/p'|sed 1,2d|sed -n '1,24p'
+	rm $kelias/rss1.txt
 ;;
 	2)
 	#elektronika
