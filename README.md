@@ -1,4 +1,4 @@
-Conky-interactive
+Conky RSS
 =================
 
-This bunch of scripts make your conky 'clicky' :)
+Suteikia galimybę skaityt RSS naujienas tiesiai darbastalyje. Rodo 3 korteles su skirtingais srautais.
