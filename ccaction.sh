@@ -1,27 +1,21 @@
 #!/bin/bash
 
 
-CONFIG_DIR=~/.ConkyClicky/confs
+CONFIG_DIR=/home/gymka/Dev/Conky-rss/confs
 
-
+windowname=Conky-stats
 # Get mouse location and set its coordinates to variables X and Y
 ##################################################################
-read X Y screen window <<< `xdotool getmouselocation|sed 's/x:\(.*\) y:\(.*\) screen:\(.*\) window:\(.*\)/\1 \2 \3 \4/'`
-#echo $X
-#echo $Y
-#echo $screen
-#echo $window
-windowname=$(xdotool getwindowname $window)
-echo; echo "         click!"
+eval $(xdotool getmouselocation --shell)
 
 # Kursoriaus koordinatės lange $windowname: $XX ir $YY
   unset x y w h
-  eval $(xwininfo -name $windowname |
+  eval $(xwininfo -id $WINDOW |
     sed -n -e "s/^ \+Absolute upper-left X: \+\([0-9]\+\).*/x=\1/p" \
            -e "s/^ \+Absolute upper-left Y: \+\([0-9]\+\).*/y=\1/p" \
            -e "s/^ \+Width: \+\([0-9]\+\).*/w=\1/p" \
            -e "s/^ \+Height: \+\([0-9]\+\).*/h=\1/p" )
-#  echo "$x $y $w $h"
+
 
 
 XX=$((X - x))
@@ -34,7 +28,7 @@ echo
 ############# Buttons ############################################
 cd $CONFIG_DIR
 # Paimami ir suskaičiuojami visi mygtukai su jų duomenimis iš konfig'o, kurio pavadinimas atitinka paspausto lango pavadinimą
-count=`grep ^BUTTON_ $windowname | wc -l`
+count=`grep ^BUTTON_ Conky-stats | wc -l`
 # kiekvieno mygtuko parametrai išrūšiuojami, priskiriami kintamiesiems ir sulyginami su kursoriaus koord.:
 while [ $count -gt 0 ]; do
 	array=$(cat $windowname|grep BUTTON_$count)
